@@ -71,7 +71,8 @@ public class ActivityOne extends Activity {
 				// Create an intent stating which Activity you would like to
 				// start
 				Intent intent = null;
-
+				intent = new Intent(ActivityOne.this, ActivityTwo.class);
+			    startActivity(intent);
 				// Launch the Activity using the intent
 
 			}
@@ -82,7 +83,10 @@ public class ActivityOne extends Activity {
 			// TODO:
 			// Restore value of counters from saved state
 			// Only need 4 lines of code, one for every count variable
-			
+			mCreate  = savedInstanceState.getInt(CREATE_KEY);
+			mRestart = savedInstanceState.getInt(RESTART_KEY);
+			mResume  = savedInstanceState.getInt(RESUME_KEY);
+			mStart   = savedInstanceState.getInt(START_KEY);
 
 		}
 
@@ -171,9 +175,9 @@ public class ActivityOne extends Activity {
 		// Save state information with a collection of key-value pairs
 		// 4 lines of code, one for every count variable
 		savedInstanceState.putInt(CREATE_KEY, mCreate);
-		savedInstanceState.putInt(RESTART_KEY, mCreate);
-		savedInstanceState.putInt(RESUME_KEY, mCreate);
-		savedInstanceState.putInt(START_KEY, mCreate);
+		savedInstanceState.putInt(RESTART_KEY, mRestart);
+		savedInstanceState.putInt(RESUME_KEY, mResume);
+		savedInstanceState.putInt(START_KEY, mStart);
 
 	}
 
